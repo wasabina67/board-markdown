@@ -38,7 +38,7 @@ const stickyNotesData: StickyNote[] = [
     color: "#4caf50",
     rotation: 0
   }
-];
+]
 
 function App() {
   return (
