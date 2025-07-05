@@ -4,7 +4,7 @@
         "x": 50,
         "y": 0,
         "title": "Task",
-        "content": "・task-1\n・task-2\n・task-3\n・task-4\n・task-5",
+        "content": "",
         "color": "#ffeb3b",
         "rotation": 0
     },
@@ -13,7 +13,7 @@
         "x": 300,
         "y": 100,
         "title": "Idea",
-        "content": "・idea-1\n・idea-2\n・idea-3\n・idea-4\n・idea-5",
+        "content": "",
         "color": "#ff9800",
         "rotation": 0
     },
@@ -22,8 +22,71 @@
         "x": 550,
         "y": 200,
         "title": "Memo",
-        "content": "・memo-1\n・memo-2\n・memo-3\n・memo-4\n・memo-5",
+        "content": "",
         "color": "#4caf50",
+        "rotation": 0
+    },
+    {
+        "id": 4,
+        "x": 100,
+        "y": 300,
+        "title": "Onboarding",
+        "content": "",
+        "color": "#2196f3",
+        "rotation": 2
+    },
+    {
+        "id": 5,
+        "x": 400,
+        "y": 400,
+        "title": "Bug",
+        "content": "",
+        "color": "#e91e63",
+        "rotation": -3
+    },
+    {
+        "id": 6,
+        "x": 650,
+        "y": 100,
+        "title": "Feature",
+        "content": "",
+        "color": "#00bcd4",
+        "rotation": 1
+    },
+    {
+        "id": 7,
+        "x": 200,
+        "y": 500,
+        "title": "Research",
+        "content": "",
+        "color": "#8bc34a",
+        "rotation": 0
+    },
+    {
+        "id": 8,
+        "x": 500,
+        "y": 600,
+        "title": "Review",
+        "content": "",
+        "color": "#ffc107",
+        "rotation": -2
+    },
+    {
+        "id": 9,
+        "x": 750,
+        "y": 300,
+        "title": "Plan",
+        "content": "",
+        "color": "#9c27b0",
+        "rotation": 3
+    },
+    {
+        "id": 10,
+        "x": 900,
+        "y": 50,
+        "title": "Done",
+        "content": "",
+        "color": "#607d8b",
         "rotation": 0
     }
 ]
