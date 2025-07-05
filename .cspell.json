@@ -2,10 +2,11 @@
     "version": "0.2",
     "language": "en",
     "words": [
+        "Avenir",
         "wasabina67"
     ],
     "ignoreWords": [],
     "ignorePaths": [
         "**/*.svg"
-    ],
+    ]
 }
