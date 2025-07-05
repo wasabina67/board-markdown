@@ -20,6 +20,10 @@
     height: 100%;
     position: relative;
     border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
 }
 
 .sticky-note {

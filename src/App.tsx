@@ -92,10 +92,11 @@ function App() {
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="sticky-notes-area"></div>
-          <div className="sticky-notes-area"></div>
-          <div className="sticky-notes-area"></div>
-          <div className="sticky-notes-area"></div>
+            {["Area-1", "Area-2", "Area-3", "Area-4"].map((name, idx) => (
+            <div key={idx} className="sticky-notes-area">
+              {name}
+            </div>
+            ))}
           {stickyNotes.map((note) => (
             <div
               key={note.id}
