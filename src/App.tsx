@@ -67,7 +67,7 @@ function App() {
   }
 
   React.useEffect(() => {
-    fetch('/data.json')
+    fetch('/board-markdown/data.json')
       .then((res) => {
         if (!res.ok) throw new Error('err')
         return res.json()
