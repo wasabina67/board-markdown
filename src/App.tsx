@@ -45,6 +45,13 @@ function App() {
     <>
       <div className="board-container">
         <h1>Board markdown</h1>
+        <div className="sticky-notes-container">
+          {stickyNotesData.map((note) => (
+            <div>
+              <h3>{note.title}</h3>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   )
