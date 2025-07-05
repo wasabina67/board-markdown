@@ -25,6 +25,10 @@ const dragStateData: DragState = {
   startY: 0
 }
 
+const areas: string[] = [
+  "Area-1", "Area-2", "Area-3", "Area-4"
+]
+
 function App() {
   const [stickyNotes, setStickyNotes] = useState<StickyNote[]>([])
   const [dragState, setDragState] = useState<DragState>(dragStateData)
@@ -92,7 +96,7 @@ function App() {
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseLeave}
         >
-            {["Area-1", "Area-2", "Area-3", "Area-4"].map((name, idx) => (
+            {areas.map((name, idx) => (
             <div key={idx} className="sticky-notes-area">
               {name}
             </div>
