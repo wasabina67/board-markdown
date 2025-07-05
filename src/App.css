@@ -9,3 +9,46 @@
     height: 90vh;
     position: relative;
 }
+
+.sticky-note {
+    width: 150px;
+    height: 150px;
+    padding: 5px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+    border-radius: 2px;
+    position: absolute;
+    cursor: pointer;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.sticky-note:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.sticky-note h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #333;
+    text-decoration: underline;
+}
+
+.sticky-note p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+}
+
+.sticky-note::before {
+    width: 30px;
+    height: 10px;
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}

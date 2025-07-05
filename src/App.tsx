@@ -47,8 +47,18 @@ function App() {
         <h1>Board markdown</h1>
         <div className="sticky-notes-container">
           {stickyNotesData.map((note) => (
-            <div>
+            <div
+              key={note.id}
+              className="sticky-note"
+              style={{
+                left: `${note.x}px`,
+                top: `${note.y}px`,
+                backgroundColor: note.color,
+                transform: `rotate(${note.rotation}deg)`
+              }}
+            >
               <h3>{note.title}</h3>
+              <p style={{ whiteSpace: 'pre-line' }}>{note.content}</p>
             </div>
           ))}
         </div>
