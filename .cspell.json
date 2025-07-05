@@ -9,6 +9,7 @@
     "ignoreWords": [],
     "ignorePaths": [
         ".git",
+        ".cspell.json",
         "**/*.svg"
     ]
 }
