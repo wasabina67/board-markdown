@@ -66,6 +66,20 @@ function App() {
     setDragState(status)
   }
 
+  React.useEffect(() => {
+    fetch('/data.json')
+      .then((res) => {
+        if (!res.ok) throw new Error('err')
+        return res.json()
+      })
+      .then((data: StickyNote[]) => {
+        setStickyNotes(data)
+      })
+      .catch((err) => {
+        console.error(err)
+      })
+  }, [])
+
   return (
     <>
       <div className="board-container">
