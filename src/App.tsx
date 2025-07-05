@@ -26,7 +26,7 @@ const dragStateData: DragState = {
 }
 
 const areas: string[] = [
-  "Area-1", "Area-2", "Area-3", "Area-4"
+  "To Do", "Icebox", "In progress", "Done"
 ]
 
 function App() {
