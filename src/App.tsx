@@ -25,16 +25,16 @@ const stickyNotesData: StickyNote[] = [
     x: 300,
     y: 100,
     title: "Idea",
-    content: "",
+    content: "・idea-1\n・idea-2\n・idea-3\n・idea-4\n・idea-5",
     color: "#ff9800",
     rotation: 0
   },
   {
     id: 3,
     x: 550,
-    y: 100,
+    y: 200,
     title: "Memo",
-    content: "",
+    content: "・memo-1\n・memo-2\n・memo-3\n・memo-4\n・memo-5",
     color: "#4caf50",
     rotation: 0
   }
