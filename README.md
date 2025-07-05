@@ -1,6 +1,9 @@
 # board-markdown
 Board markdown
 
+> [!NOTE]
+> Although the title says "Markdown", the initial data is managed in JSON.
+
 ## dev
 
 ```bash
