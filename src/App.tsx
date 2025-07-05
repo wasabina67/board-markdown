@@ -92,6 +92,10 @@ function App() {
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseLeave}
         >
+          <div className="sticky-notes-area"></div>
+          <div className="sticky-notes-area"></div>
+          <div className="sticky-notes-area"></div>
+          <div className="sticky-notes-area"></div>
           {stickyNotes.map((note) => (
             <div
               key={note.id}
