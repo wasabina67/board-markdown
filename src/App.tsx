@@ -118,7 +118,7 @@ function App() {
               onMouseDown={(e) => handleMouseDown(e, note.id)}
             >
               <h3>{note.title}</h3>
-              <p style={{ whiteSpace: 'pre-line' }}>{note.content}</p>
+              <p>{note.content}</p>
             </div>
           ))}
         </div>
