@@ -83,7 +83,9 @@ function App() {
   return (
     <>
       <div className="board-container">
-        <h1>Board markdown</h1>
+        <h1>
+          <a href="https://wasabina67.github.io/board-markdown/">Board markdown</a>
+        </h1>
         <div
           className="sticky-notes-container"
           onMouseMove={handleMouseMove}
