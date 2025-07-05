@@ -11,6 +11,7 @@
     "ignoreWords": [],
     "ignorePaths": [
         ".git",
+        "docs",
         "**/*.svg"
     ]
 }
