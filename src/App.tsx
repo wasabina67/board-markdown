@@ -115,7 +115,8 @@ function App() {
                 top: `${note.y}px`,
                 backgroundColor: note.color,
                 transform: `rotate(${note.rotation}deg)`,
-                cursor: dragState.isDragging && dragState.noteId === note.id ? 'grabbing' : 'grab'
+                userSelect: 'none',
+                cursor: dragState.isDragging && dragState.noteId === note.id ? 'grabbing' : 'grab',
               }}
               onMouseDown={(e) => handleMouseDown(e, note.id)}
             >
