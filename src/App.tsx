@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import './App.css'
 
 interface StickyNote {
@@ -8,6 +9,13 @@ interface StickyNote {
   content: string;
   color: string;
   rotation: number;
+}
+
+interface DragState {
+  isDragging: boolean
+  noteId: number | null
+  startX: number
+  startY: number
 }
 
 const stickyNotesData: StickyNote[] = [
@@ -40,13 +48,64 @@ const stickyNotesData: StickyNote[] = [
   }
 ]
 
+const dragStateData: DragState = {
+  isDragging: false,
+  noteId: null,
+  startX: 0,
+  startY: 0
+}
+
 function App() {
+  const [stickyNotes, setStickyNotes] = useState<StickyNote[]>(stickyNotesData)
+  const [dragState, setDragState] = useState<DragState>(dragStateData)
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!dragState.isDragging || dragState.noteId === null) return
+    const rect = e.currentTarget.getBoundingClientRect()
+    const newX = e.clientX - rect.left - dragState.startX
+    const newY = e.clientY - rect.top - dragState.startY
+
+    setStickyNotes(notes =>
+      notes.map(note =>
+        note.id === dragState.noteId
+          ? { ...note, x: Math.max(0, newX), y: Math.max(0, newY) }
+          : note
+      )
+    )
+  }
+
+  const handleMouseUp = () => {
+    setDragState(dragStateData)
+  }
+
+  const handleMouseLeave = () => {
+    setDragState(dragStateData)
+  }
+
+  const handleMouseDown = (e: React.MouseEvent, noteId: number) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const offsetX = e.clientX - rect.left
+    const offsetY = e.clientY - rect.top
+    const status: DragState = {
+      isDragging: true,
+      noteId,
+      startX: offsetX,
+      startY: offsetY
+    }
+    setDragState(status)
+  }
+
   return (
     <>
       <div className="board-container">
         <h1>Board markdown</h1>
-        <div className="sticky-notes-container">
-          {stickyNotesData.map((note) => (
+        <div
+          className="sticky-notes-container"
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+        >
+          {stickyNotes.map((note) => (
             <div
               key={note.id}
               className="sticky-note"
@@ -56,6 +115,7 @@ function App() {
                 backgroundColor: note.color,
                 transform: `rotate(${note.rotation}deg)`
               }}
+              onMouseDown={(e) => handleMouseDown(e, note.id)}
             >
               <h3>{note.title}</h3>
               <p style={{ whiteSpace: 'pre-line' }}>{note.content}</p>
