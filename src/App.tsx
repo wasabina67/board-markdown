@@ -14,9 +14,9 @@ const stickyNotesData: StickyNote[] = [
   {
     id: 1,
     x: 50,
-    y: 100,
-    title: "タスク",
-    content: "",
+    y: 0,
+    title: "Task",
+    content: "・task-1\n・task-2\n・task-3\n・task-4\n・task-5",
     color: "#ffeb3b",
     rotation: 0
   },
@@ -24,7 +24,7 @@ const stickyNotesData: StickyNote[] = [
     id: 2,
     x: 300,
     y: 100,
-    title: "アイデア",
+    title: "Idea",
     content: "",
     color: "#ff9800",
     rotation: 0
@@ -33,7 +33,7 @@ const stickyNotesData: StickyNote[] = [
     id: 3,
     x: 550,
     y: 100,
-    title: "メモ",
+    title: "Memo",
     content: "",
     color: "#4caf50",
     rotation: 0
