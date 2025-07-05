@@ -92,6 +92,7 @@ function App() {
       startX: offsetX,
       startY: offsetY
     }
+
     setDragState(status)
   }
 
