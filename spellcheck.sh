@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cspell .
-echo "====="
+echo "===================="
 
 files=(
     $(find . \
@@ -14,4 +14,4 @@ files=(
 )
 printf '%s\n' "${files[@]}"
 echo "find: Files found: ${#files[@]}"
-echo "====="
+echo "===================="
