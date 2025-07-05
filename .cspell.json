@@ -1,6 +1,7 @@
 {
     "version": "0.2",
     "language": "en",
+    "enableGlobDot": true,
     "words": [
         "Avenir",
         "wasabina67"
@@ -9,6 +10,5 @@
     "ignorePaths": [
         ".git",
         "**/*.svg"
-    ],
-    "enableGlobDot": true
+    ]
 }
