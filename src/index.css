@@ -12,6 +12,10 @@ h1 {
     text-align: center;
 }
 
+button {
+    margin-left: 10px;
+}
+
 p {
     white-space: pre-line;
     word-wrap: break-word;
