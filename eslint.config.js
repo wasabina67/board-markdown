@@ -19,8 +19,5 @@ export default tseslint.config([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
-    rules: {
-      semi: ["error", "never"],
-    },
   },
 ])
