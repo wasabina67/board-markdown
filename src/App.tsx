@@ -18,6 +18,10 @@ interface DragState {
   startY: number
 }
 
+interface ContextMenuState {}
+
+interface EditState {}
+
 const dragStateData: DragState = {
   isDragging: false,
   noteId: null,
