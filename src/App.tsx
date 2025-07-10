@@ -70,10 +70,30 @@ function App() {
     setDragState(status)
   }
 
+  const saveToLocalStorage = () => {
+    try {
+      localStorage.setItem('board-markdown.stickyNotes', JSON.stringify(stickyNotes))
+      alert('Success!')
+    } catch (err) {
+      console.error('Error:', err)
+      alert('Error!')
+    }
+  }
+
   React.useEffect(() => {
+    try {
+      const savedStickyNotes = localStorage.getItem('board-markdown.stickyNotes')
+      if (savedStickyNotes) {
+        setStickyNotes(JSON.parse(savedStickyNotes))
+        return
+      }
+    } catch (err) {
+      console.error('Error:', err)
+    }
+
     fetch('/board-markdown/data.json')
       .then((res) => {
-        if (!res.ok) throw new Error('err')
+        if (!res.ok) throw new Error('Error')
         return res.json()
       })
       .then((data: StickyNote[]) => {
@@ -89,6 +109,12 @@ function App() {
       <div className="board-container">
         <h1>
           <a href="https://wasabina67.github.io/board-markdown/">Board markdown</a>
+          <button
+            className="save"
+            onClick={saveToLocalStorage}
+          >
+            Save
+          </button>
         </h1>
         <div
           className="sticky-notes-container"

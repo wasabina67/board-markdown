@@ -8,8 +8,13 @@ body {
 
 h1 {
     margin: 0;
+    padding-left: 20px;
     font-size: 1.5em;
-    text-align: center;
+    text-align: left;
+}
+
+button {
+    margin-left: 20px;
 }
 
 p {
