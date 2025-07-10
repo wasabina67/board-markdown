@@ -18,9 +18,19 @@ interface DragState {
   startY: number
 }
 
-interface ContextMenuState {}
+interface ContextMenuState {
+  isVisible: boolean
+  noteId: number | null
+  x: number
+  y: number
+}
 
-interface EditState {}
+interface EditState {
+  isEditing: boolean
+  noteId: number | null
+  title: string
+  content: string
+}
 
 const dragStateData: DragState = {
   isDragging: false,
