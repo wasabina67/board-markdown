@@ -39,6 +39,12 @@ const dragStateData: DragState = {
   startY: 0
 }
 
+const contextMenuStateData: ContextMenuState {
+}
+
+const editStateData: EditState {
+}
+
 const areas: string[] = [
   "To Do", "Icebox", "In progress", "Done"
 ]
