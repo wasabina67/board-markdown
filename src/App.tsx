@@ -86,6 +86,10 @@ function App() {
     setDragState(dragStateData)
   }
 
+  const handleClickOutside = () => {
+    setContextMenuState(contextMenuStateData)
+  }
+
   const handleMouseDown = (e: React.MouseEvent, noteId: number) => {
     const rect = e.currentTarget.getBoundingClientRect()
     const offsetX = e.clientX - rect.left
@@ -98,6 +102,11 @@ function App() {
     }
 
     setDragState(status)
+  }
+
+  const handleContextMenu = (e: React.MouseEvent, noteId: number) => {
+    e.preventDefault()
+    alert(noteId)
   }
 
   const saveToLocalStorage = () => {
@@ -151,6 +160,7 @@ function App() {
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseLeave}
+          onClick={handleClickOutside}
         >
             {areas.map((name, idx) => (
             <div key={idx} className="sticky-notes-area">
@@ -170,6 +180,7 @@ function App() {
                 cursor: dragState.isDragging && dragState.noteId === note.id ? 'grabbing' : 'grab',
               }}
               onMouseDown={(e) => handleMouseDown(e, note.id)}
+              onContextMenu={(e) => handleContextMenu(e, note.id)}
             >
               <h3>{note.title}</h3>
               <p>{note.content}</p>
