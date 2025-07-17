@@ -39,10 +39,18 @@ const dragStateData: DragState = {
   startY: 0
 }
 
-const contextMenuStateData: ContextMenuState {
+const contextMenuStateData: ContextMenuState = {
+  isVisible: false,
+  noteId: null,
+  x: 0,
+  y: 0
 }
 
-const editStateData: EditState {
+const editStateData: EditState = {
+  isEditing: false,
+  noteId: null,
+  title: '',
+  content: ''
 }
 
 const areas: string[] = [
@@ -52,6 +60,8 @@ const areas: string[] = [
 function App() {
   const [stickyNotes, setStickyNotes] = useState<StickyNote[]>([])
   const [dragState, setDragState] = useState<DragState>(dragStateData)
+  const [contextMenuState, setContextMenuState] = useState<ContextMenuState>(contextMenuStateData)
+  const [editState, setEditState] = useState<EditState>(editStateData)
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!dragState.isDragging || dragState.noteId === null) return
