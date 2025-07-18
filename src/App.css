@@ -83,3 +83,8 @@
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 2px;
 }
+
+.context-menu {
+    position: absolute;
+    z-index: calc(infinity);
+}

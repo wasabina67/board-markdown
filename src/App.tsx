@@ -106,7 +106,18 @@ function App() {
 
   const handleContextMenu = (e: React.MouseEvent, noteId: number) => {
     e.preventDefault()
-    alert(noteId)
+    const ctr = document.querySelector('.sticky-notes-container') as HTMLElement
+    const rect = ctr.getBoundingClientRect()
+    const offsetX = e.clientX - rect.left
+    const offsetY = e.clientY - rect.top
+    const status: ContextMenuState = {
+      isVisible: true,
+      noteId,
+      x: offsetX,
+      y: offsetY
+    }
+
+    setContextMenuState(status)
   }
 
   const saveToLocalStorage = () => {
@@ -186,6 +197,17 @@ function App() {
               <p>{note.content}</p>
             </div>
           ))}
+          {contextMenuState.isVisible && (
+            <div
+              className="context-menu"
+              style={{
+                left: `${contextMenuState.x}px`,
+                top: `${contextMenuState.y}px`,
+              }}
+            >
+              hello
+            </div>
+          )}
         </div>
       </div>
     </>
