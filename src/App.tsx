@@ -120,6 +120,29 @@ function App() {
     setContextMenuState(status)
   }
 
+  const handleEditClick = () => {
+    if (contextMenuState.noteId === null) return
+
+    const note = stickyNotes.find(n => n.id === contextMenuState.noteId)
+    if (note) {
+      const status: EditState = {
+        isEditing: true,
+        noteId: note.id,
+        title: note.title,
+        content: note.content
+      }
+      setEditState(status)
+    } else {
+      alert('Error!')
+    }
+
+    setContextMenuState(contextMenuStateData)
+  }
+
+  const handleSaveClick = ()=> {
+    if (editState.noteId === null) return
+  }
+
   const saveToLocalStorage = () => {
     try {
       localStorage.setItem('board-markdown.stickyNotes', JSON.stringify(stickyNotes))
@@ -207,7 +230,10 @@ function App() {
               }}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="context-menu-item">
+              <div
+                className="context-menu-item"
+                onClick={handleEditClick}
+              >
                 Edit
               </div>
             </div>
