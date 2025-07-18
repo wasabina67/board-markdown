@@ -85,6 +85,21 @@
 }
 
 .context-menu {
+    width: 100px;
     position: absolute;
+    background-color: #ccc;
+    border-radius: 4px;
     z-index: calc(infinity);
+}
+
+.context-menu-item {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+}
+
+.context-menu-item:hover {
+    background-color: #f0f0f0;
+    border-radius: 4px;
 }

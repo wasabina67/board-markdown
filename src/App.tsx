@@ -197,6 +197,7 @@ function App() {
               <p>{note.content}</p>
             </div>
           ))}
+
           {contextMenuState.isVisible && (
             <div
               className="context-menu"
@@ -204,10 +205,14 @@ function App() {
                 left: `${contextMenuState.x}px`,
                 top: `${contextMenuState.y}px`,
               }}
+              onClick={(e) => e.stopPropagation()}
             >
-              hello
+              <div className="context-menu-item">
+                Edit
+              </div>
             </div>
           )}
+
         </div>
       </div>
     </>
