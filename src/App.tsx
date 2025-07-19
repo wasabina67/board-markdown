@@ -141,6 +141,16 @@ function App() {
 
   const handleSaveClick = ()=> {
     if (editState.noteId === null) return
+
+    setStickyNotes(notes =>
+      notes.map(note =>
+        note.id === editState.noteId
+          ? { ...note, title: editState.title, content: editState.content }
+          : note
+      )
+    )
+
+    setEditState(editStateData)
   }
 
   const saveToLocalStorage = () => {
