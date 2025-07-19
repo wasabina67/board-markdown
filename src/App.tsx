@@ -139,7 +139,7 @@ function App() {
     setContextMenuState(contextMenuStateData)
   }
 
-  const handleSaveClick = () => {
+  const handleEditSaveClick = () => {
     if (editState.noteId === null) return
 
     setStickyNotes(notes =>
@@ -153,7 +153,7 @@ function App() {
     setEditState(editStateData)
   }
 
-  const handleCancelClick = () => {
+  const handleEditCancelClick = () => {
     setEditState(editStateData)
   }
 
