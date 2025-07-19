@@ -254,8 +254,10 @@ function App() {
           )}
 
           {editState.isEditing && (
-            <div>
-              Edit
+            <div className="edit-modal-overlay" onClick={handleEditCancelClick}>
+              <div className="edit-modal" onClick={(e) => e.stopPropagation()}>
+                <h3>Edit</h3>
+              </div>
             </div>
           )}
 
