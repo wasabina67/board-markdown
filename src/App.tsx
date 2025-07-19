@@ -253,6 +253,12 @@ function App() {
             </div>
           )}
 
+          {editState.isEditing && (
+            <div>
+              Edit
+            </div>
+          )}
+
         </div>
       </div>
     </>
