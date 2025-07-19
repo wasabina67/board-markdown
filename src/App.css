@@ -187,10 +187,10 @@
 }
 
 .edit-buttons button:last-child {
-    background-color: orange;
+    background-color: #FFA726;
     color: white;
 }
 
 .edit-buttons button:last-child:hover {
-    background-color: orange;
+    background-color: #FB8C00;
 }
