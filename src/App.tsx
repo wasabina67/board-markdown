@@ -257,9 +257,27 @@ function App() {
             <div className="edit-modal-overlay" onClick={handleEditCancelClick}>
               <div className="edit-modal" onClick={(e) => e.stopPropagation()}>
                 <h3>Edit</h3>
-                <div>
-                  <button onClick={handleEditSaveClick}>Save</button>
-                  <button onClick={handleEditCancelClick}>Cancel</button>
+                <div className="edit-form">
+                  <label>
+                    Title:
+                    <input
+                      type="text"
+                      value={editState.title}
+                      onChange={(e) => setEditState(prev => ({ ...prev, title: e.target.value }))}
+                    />
+                  </label>
+                  <label>
+                    Content:
+                    <textarea
+                      rows={6}
+                      value={editState.content}
+                      onChange={(e) => setEditState(prev => ({ ...prev, content: e.target.value }))}
+                    />
+                  </label>
+                  <div className="edit-buttons">
+                    <button onClick={handleEditSaveClick}>Save</button>
+                    <button onClick={handleEditCancelClick}>Cancel</button>
+                  </div>
                 </div>
               </div>
             </div>
