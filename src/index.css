@@ -11,6 +11,8 @@ h1 {
     padding-left: 20px;
     font-size: 1.5em;
     text-align: left;
+    display: flex;
+    align-items: center;
 }
 
 button {
