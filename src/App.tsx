@@ -176,6 +176,7 @@ function App() {
       }
     } catch (err) {
       console.error('Error:', err)
+      alert('Error!')
     }
 
     fetch('/board-markdown/data.json')
@@ -187,7 +188,8 @@ function App() {
         setStickyNotes(data)
       })
       .catch((err) => {
-        console.error(err)
+        console.error('Error:', err)
+        alert('Error!')
       })
   }, [])
 
