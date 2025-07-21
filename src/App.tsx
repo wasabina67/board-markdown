@@ -139,6 +139,12 @@ function App() {
     setContextMenuState(contextMenuStateData)
   }
 
+  const handleDeleteClick = () => {
+    if (contextMenuState.noteId === null) return
+    setStickyNotes(notes => notes.filter(note => note.id !== contextMenuState.noteId))
+    setContextMenuState(contextMenuStateData)
+  }
+
   const handleEditSaveClick = () => {
     if (editState.noteId === null) return
 
@@ -257,6 +263,12 @@ function App() {
                 onClick={handleEditClick}
               >
                 Edit
+              </div>
+              <div
+                className="context-menu-item"
+                onClick={handleDeleteClick}
+              >
+                Delete
               </div>
             </div>
           )}

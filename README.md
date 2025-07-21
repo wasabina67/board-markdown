@@ -5,6 +5,8 @@ Board markdown
 
 ![image](images/20250722.png)
 
+Right-click a sticky note to edit or delete it.
+
 > [!NOTE]
 > Although the title says "Markdown", the initial data is managed in JSON. 🥺
 
