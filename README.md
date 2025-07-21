@@ -3,7 +3,7 @@ Board markdown
 
 [Demo](https://wasabina67.github.io/board-markdown/)
 
-![image](https://github.com/user-attachments/assets/2626d611-1a48-4e0a-989c-2ada006c3a69)
+![image](images/20250722.png)
 
 > [!NOTE]
 > Although the title says "Markdown", the initial data is managed in JSON. 🥺
