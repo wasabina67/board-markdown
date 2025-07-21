@@ -195,7 +195,13 @@ function App() {
     <>
       <div className="board-container">
         <h1>
-          <a href="https://wasabina67.github.io/board-markdown/">Board markdown</a>
+          <a
+            className="title"
+            href="https://wasabina67.github.io/board-markdown/"
+          >
+            <img src="icon.svg" height={20} />
+            <span>Board markdown</span>
+          </a>
           <button
             className="save"
             onClick={saveToLocalStorage}
