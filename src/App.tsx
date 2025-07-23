@@ -269,7 +269,7 @@ function App() {
                 Edit
               </div>
               <div
-                className="context-menu-item"
+                className="context-menu-item delete"
                 onClick={handleDeleteClick}
               >
                 Delete
