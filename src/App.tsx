@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './App.css'
+import { Toast, useToast } from './components/Toast'
 
 interface StickyNote {
   id: number;
@@ -64,6 +65,7 @@ function App() {
   const [dragState, setDragState] = useState<DragState>(dragStateData)
   const [contextMenuState, setContextMenuState] = useState<ContextMenuState>(contextMenuStateData)
   const [editState, setEditState] = useState<EditState>(editStateData)
+  const { toasts, showToast, removeToast } = useToast()
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!dragState.isDragging || dragState.noteId === null) return
@@ -135,7 +137,7 @@ function App() {
       }
       setEditState(status)
     } else {
-      alert('Error!')
+      showToast('Error!', 'error')
     }
 
     setContextMenuState(contextMenuStateData)
@@ -149,6 +151,8 @@ function App() {
     )
 
     setContextMenuState(contextMenuStateData)
+
+    showToast('Success!', 'success')
   }
 
   const handleEditSaveClick = () => {
@@ -163,6 +167,8 @@ function App() {
     )
 
     setEditState(editStateData)
+
+    showToast('Success!', 'success')
   }
 
   const handleEditCancelClick = () => {
@@ -172,10 +178,10 @@ function App() {
   const saveToLocalStorage = () => {
     try {
       localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(stickyNotes))
-      alert('Success!')
+      showToast('Success!', 'success')
     } catch (err) {
       console.error('Error:', err)
-      alert('Error!')
+      showToast('Error!', 'error')
     }
   }
 
@@ -188,7 +194,7 @@ function App() {
       }
     } catch (err) {
       console.error('Error:', err)
-      alert('Error!')
+      showToast('Error!', 'error')
     }
 
     fetch('/board-markdown/data.json')
@@ -201,7 +207,7 @@ function App() {
       })
       .catch((err) => {
         console.error('Error:', err)
-        alert('Error!')
+        showToast('Error!', 'error')
       })
   }, [])
 
@@ -311,6 +317,7 @@ function App() {
 
         </div>
       </div>
+      <Toast messages={toasts} onRemove={removeToast} />
     </>
   )
 }
