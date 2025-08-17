@@ -53,6 +53,8 @@ const editStateData: EditState = {
   content: ''
 }
 
+const LOCALSTORAGE_KEY = 'board-markdown.stickyNotes'
+
 const areas: string[] = [
   "To Do", "Icebox", "In progress", "Done"
 ]
@@ -169,7 +171,7 @@ function App() {
 
   const saveToLocalStorage = () => {
     try {
-      localStorage.setItem('board-markdown.stickyNotes', JSON.stringify(stickyNotes))
+      localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(stickyNotes))
       alert('Success!')
     } catch (err) {
       console.error('Error:', err)
@@ -179,7 +181,7 @@ function App() {
 
   React.useEffect(() => {
     try {
-      const savedStickyNotes = localStorage.getItem('board-markdown.stickyNotes')
+      const savedStickyNotes = localStorage.getItem(LOCALSTORAGE_KEY)
       if (savedStickyNotes) {
         setStickyNotes(JSON.parse(savedStickyNotes))
         return
