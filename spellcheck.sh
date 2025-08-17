@@ -1,7 +1,8 @@
 #!/bin/bash
 
 echo "===================="
-cspell .
+# cspell .
+cspell --no-progress .
 echo "===================="
 
 files=(
@@ -10,10 +11,11 @@ files=(
         ! -path "./.git/*" \
         ! -path "./docs/*" \
         ! -path "./node_modules/*" \
+        ! -name "*.png" \
         ! -name "*.svg" \
         ! -name "package-lock.json"
     )
 )
-printf '%s\n' "${files[@]}"
+# printf '%s\n' "${files[@]}"
 echo "find: Files found: ${#files[@]}"
 echo "===================="
