@@ -151,6 +151,8 @@ function App() {
     )
 
     setContextMenuState(contextMenuStateData)
+
+    showToast('Success!', 'success')
   }
 
   const handleEditSaveClick = () => {
@@ -165,6 +167,8 @@ function App() {
     )
 
     setEditState(editStateData)
+
+    showToast('Success!', 'success')
   }
 
   const handleEditCancelClick = () => {
