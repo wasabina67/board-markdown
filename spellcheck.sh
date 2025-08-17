@@ -1,7 +1,8 @@
 #!/bin/bash
 
 echo "===================="
-cspell .
+# cspell .
+cspell --no-progress .
 echo "===================="
 
 files=(
@@ -15,6 +16,6 @@ files=(
         ! -name "package-lock.json"
     )
 )
-printf '%s\n' "${files[@]}"
+# printf '%s\n' "${files[@]}"
 echo "find: Files found: ${#files[@]}"
 echo "===================="
