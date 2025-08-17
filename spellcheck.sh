@@ -10,6 +10,7 @@ files=(
         ! -path "./.git/*" \
         ! -path "./docs/*" \
         ! -path "./node_modules/*" \
+        ! -name "*.png" \
         ! -name "*.svg" \
         ! -name "package-lock.json"
     )
